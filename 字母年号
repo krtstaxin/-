@@ -1,0 +1,15 @@
+int main()
+{
+    int n;
+    int ans[100],top = 0;
+    scanf("%d",&n);
+    while(n > 0)
+    {
+        ans[top++] = n%26 - 1;
+        if (n%26 == 0) {ans[top-1] = 25;n -= 26;}
+        n /= 26;
+    }
+    while(top)
+        printf("%c",'A' + ans[--top]);
+    return 0;
+}
